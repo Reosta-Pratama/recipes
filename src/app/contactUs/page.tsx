@@ -2,13 +2,13 @@ import { Metadata } from 'next'
 import React from 'react'
 
 export const metadata: Metadata = {
-  title: 'Home',
+  title: 'Contact Us',
   description: '...',
 }
 
 const page = () => {
   return (
-    <div>page</div>
+    <div>contact us</div>
   )
 }
 
