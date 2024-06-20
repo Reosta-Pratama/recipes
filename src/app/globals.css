@@ -256,3 +256,7 @@ body {
     font-weight: 400;
     color: #595959;
 }
+
+input:focus-visible{
+    outline: none;
+}

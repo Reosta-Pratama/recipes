@@ -11,7 +11,9 @@ export default function RootLayout({children} : Readonly < {
                 <Header></Header>
 
                 {/* Main */}
-                {children}
+                <main>
+                  {children}
+                </main>
 
                 {/* Footer */}
             </body>

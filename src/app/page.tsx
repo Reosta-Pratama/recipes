@@ -1,3 +1,4 @@
+import Carousel from '@/components/Carousel/Carousel'
 import { Metadata } from 'next'
 import React from 'react'
 
@@ -8,7 +9,9 @@ export const metadata: Metadata = {
 
 const page = () => {
   return (
-    <div>page</div>
+    <>
+      <Carousel></Carousel>
+    </>
   )
 }
 

@@ -11,7 +11,11 @@ const config: Config = {
       fontFamily: {
         'dancingScript': ['Dancing Script', 'cursive'],
         'ebGaramond': ['EB Garamond', 'serif']
-      }
+      },
+      colors: {
+        'main': '#e35640',
+        'lightHover': '#ee2852',
+      },
     },
   },
   plugins: [],

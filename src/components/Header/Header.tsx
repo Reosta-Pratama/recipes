@@ -1,5 +1,6 @@
 import React from 'react'
 import Navigation from './Navigation'
+import Searching from './Searching'
 
 const Header = () => {
     return (
@@ -19,9 +20,7 @@ const Header = () => {
             </Navigation>
 
             {/* Searching */}
-            <span>
-                search
-            </span>
+            <Searching></Searching>
         </header>
     )
 }
