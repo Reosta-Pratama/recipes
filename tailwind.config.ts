@@ -16,6 +16,9 @@ const config: Config = {
         'main': '#e35640',
         'lightHover': '#ee2852',
       },
+      backgroundImage: {
+        'pattern': "url('../../public/assets/img/pattern.png')",
+      }
     },
   },
   plugins: [],

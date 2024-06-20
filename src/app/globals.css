@@ -248,6 +248,11 @@
     }
 }
 
+::selection {
+    color: white;
+    background: #e35640;
+}
+
 body {
     background-color: #f9f6f6;
     font-family: Raleway, sans-serif;
