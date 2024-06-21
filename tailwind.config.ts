@@ -15,6 +15,7 @@ const config: Config = {
       colors: {
         'main': '#e35640',
         'lightHover': '#ee2852',
+        'background': '#f9f6f6',
       },
       backgroundImage: {
         'pattern': "url('../../public/assets/img/pattern.png')",

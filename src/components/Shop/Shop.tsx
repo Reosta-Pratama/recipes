@@ -1,6 +1,6 @@
 "use client"
 
-import React, {useState} from 'react'
+import React from 'react'
 import TitleSection from '../Title/TitleSection'
 import useSWR from 'swr'
 import BtnMenu from '../Button/BtnMenu'

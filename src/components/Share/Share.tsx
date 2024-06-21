@@ -6,7 +6,7 @@ import Image from 'next/legacy/image'
 
 const fetcher = (url : string) => fetch(url).then(res => res.json())
 
-const Shop = () => {
+const Share = () => {
     // Get Data
     const {data, error, isLoading} = useSWR('https://dummyjson.com/recipes?limit=6&sortBy=name&order=asc', fetcher)
     if(error) return <div>failed to load</div>
@@ -50,4 +50,4 @@ const Shop = () => {
     )
 }
 
-export default Shop
+export default Share

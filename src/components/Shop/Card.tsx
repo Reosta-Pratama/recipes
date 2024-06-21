@@ -40,7 +40,7 @@ const Card: React.FC<CardProps> = ({data}) => {
 
             <div className="flex flex-col text-center gap-2">
                 <Link href={`shop/${data.id}`}>
-                    <h2 className='text-black text-2xl font-medium font-ebGaramond
+                    <h2 className='text-black text-xl font-medium font-ebGaramond
                         duration-300 ease-in-out
                         hover:text-[#505050]'>{data.name}</h2>
                 </Link>
