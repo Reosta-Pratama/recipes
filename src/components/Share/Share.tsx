@@ -13,7 +13,7 @@ const Shop = () => {
     if(isLoading) return <div>loading...</div>
 
     return (
-        <section className='flex flex-col gap-5 py-24'>
+        <section className='flex flex-col gap-5 pt-24'>
             <div className="flex justify-center">
                 <div className='w-[416px] flex justify-center text-center'>
                     <h3 className='text-black text-xl font-medium font-ebGaramond italic'>
