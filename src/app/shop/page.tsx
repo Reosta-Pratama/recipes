@@ -6,7 +6,7 @@ import Card from '@/components/Shop/Card'
 import Filtering from '@/components/Shop/Filtering'
 import Popular from '@/components/Shop/Popular'
 import Sorting from '@/components/Shop/Sorting'
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import useSWR from 'swr'
 
 const fetcher = (url : string) => fetch(url).then(res => res.json())
@@ -27,6 +27,11 @@ const page = () => {
     const startIndex = (currentPage - 1) * itemsPerPage
     const endIndex = Math.min(startIndex + itemsPerPage, totalItems); 
     const currentItems = data?.recipes?.slice(startIndex, endIndex)
+
+        // Handle sorting option change
+        const handleSortChange = (option: React.SetStateAction<string>) => {
+          setCurrentPage(1) // Reset to first page when sorting changes
+        }
 
     // Handle page change
     const handlePageChange = (pageNumber: number) => {
@@ -59,19 +64,14 @@ const page = () => {
                             <p>Showing {startIndex + 1}–{endIndex} of {totalItems} results</p>
 
                             {/* Sorting */}
-                            <form 
-                              action="" 
-                              method="get">
-                              <Sorting
-                                option={[
-                                  ["default", "Default sorting"],
-                                  ["popularity", "Sort by popularity"],
-                                  ["averageRating", "Sort by average rating"],
-                                  ["lowPrice", "Sort by price: low to high"],
-                                  ["highPrice", "Sort by price: high to low"],
-                                ]}>
-                              </Sorting>
-                            </form>
+                            <Sorting
+                              option={[
+                                ["default", "Default sorting"],
+                                ["name-asc", "Sort by A-Z"],
+                                ["name-desc", "Sort by Z-A"],
+                              ]}
+                              onchange={() => handleSortChange}>
+                            </Sorting>
                           </div>
 
                           {/* List Shop */}

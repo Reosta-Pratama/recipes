@@ -1,17 +1,18 @@
 "use client"
 
 import React, { useEffect, useRef, useState } from 'react'
-import { FiChevronDown } from 'react-icons/fi';
+import { FiChevronDown } from 'react-icons/fi'
 
 interface SortingProps{
     option: Array<Array<string>>;
+    onchange: () => void;
 }
 
-const Sorting: React.FC<SortingProps> = ({option}) => {
+const Sorting: React.FC<SortingProps> = ({option, onchange}) => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false)
-    const [selectedOption, setSelectedOption] = useState<string>("Default sorting");
+    const [selectedOption, setSelectedOption] = useState<string>("Default sorting")
     const [selectedValue, setSelectedValue] = useState<string>("default")
-    const dropdownRef = useRef<HTMLDivElement>(null);
+    const dropdownRef = useRef<HTMLDivElement>(null)
 
     const toggleDropdown = () => {
         setIsDropdownOpen(!isDropdownOpen)
@@ -37,19 +38,13 @@ const Sorting: React.FC<SortingProps> = ({option}) => {
         setIsDropdownOpen(false)
     }
 
-  return (
+    return (
     <>
         <select 
             name="sortBy" 
             id="sortBy"
             value={selectedValue}
-            onChange={(event) => {
-                const selectedOption = option.find(item => item[0] === event.target.value)
-                if(selectedOption){
-                    setSelectedOption(selectedOption[1])
-                    setSelectedValue(selectedOption[0])
-                }
-            }}
+            onChange={onchange}
             className='hidden'>
             {
                 option.map((item: any, index: React.Key) => {
