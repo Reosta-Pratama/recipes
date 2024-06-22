@@ -4,7 +4,7 @@ interface BtnPageProps{
     func?: () => void;
     disabled: boolean;
     numeric?: boolean;
-    children: ReactNode
+    children: ReactNode;
 
 }
 

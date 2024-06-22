@@ -1,32 +1,37 @@
 "use client"
 
 import Paginate from '@/components/Paginate/Paginate'
+import Card from '@/components/Recipes/Card'
+import Filtering from '@/components/Recipes/Filtering'
+import Popular from '@/components/Recipes/Popular'
+import Sorting from '@/components/Recipes/Sorting'
 import SideShare from '@/components/Share/SideShare'
-import Card from '@/components/Shop/Card'
-import Filtering from '@/components/Shop/Filtering'
-import Popular from '@/components/Shop/Popular'
-import Sorting from '@/components/Shop/Sorting'
-import React, { useRef, useState } from 'react'
+import { RemoveFilter, filterItems, useSearchQuery } from '@/helpers/Search'
+import React, { useState } from 'react'
 import useSWR from 'swr'
 
 const fetcher = (url : string) => fetch(url).then(res => res.json())
 
 const page = () => {
     const [currentPage, setCurrentPage] = useState(1)
-    const itemsPerPage = 16
+    const itemsPerPage = 8
+    const search = useSearchQuery()
 
     // Get Data
     const {data, error, isLoading} = useSWR('https://dummyjson.com/recipes', fetcher)
     if(error) return <div>failed to load</div>
     if(isLoading) return <div>loading...</div>
 
-    const totalItems = data?.recipes?.length
+    // Filter Searching
+    const filteredItems = filterItems(data?.recipes || [], search)
+
+    const totalItems = filteredItems.length
     const totalPages = Math.ceil(totalItems / itemsPerPage)
 
     // Calculate items for the current page
     const startIndex = (currentPage - 1) * itemsPerPage
     const endIndex = Math.min(startIndex + itemsPerPage, totalItems); 
-    const currentItems = data?.recipes?.slice(startIndex, endIndex)
+    const currentItems = filteredItems.slice(startIndex, endIndex)
 
         // Handle sorting option change
         const handleSortChange = (option: React.SetStateAction<string>) => {
@@ -42,7 +47,7 @@ const page = () => {
 
     return (
         <>
-          <title>Recipe</title>
+          <title>Recipe - Masak</title>
 
           <section className='w-[1300px] max-w-[1300px] mx-auto pt-20'>
               <div className="relative flex gap-12">
@@ -61,6 +66,9 @@ const page = () => {
                             flex justify-between items-center 
                             py-[10px]">
 
+                            {/* Remove Filter */}
+                            <RemoveFilter></RemoveFilter>
+
                             {/* Count item */}
                             <p>Showing {startIndex + 1}–{endIndex} of {totalItems} results</p>
 
@@ -76,7 +84,7 @@ const page = () => {
                           </div>
 
                           {/* List Shop */}
-                          <ul className="col-span-2 grid grid-cols-4 gap-[30px]">
+                          <ul className="col-span-2 grid grid-cols-2 gap-[30px]">
                               {
                                   currentItems.map((item: any) => {
                                       return(

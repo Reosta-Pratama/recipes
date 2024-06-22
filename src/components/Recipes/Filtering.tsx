@@ -1,7 +1,7 @@
-import TitleSide from '@/components/Title/TitleSide'
 import Link from 'next/link'
 import React from 'react'
 import useSWR from 'swr'
+import TitleSide from '../Title/TitleSide'
 
 const fetcher = (url: string) => fetch(url).then(res => res.json())
 

@@ -41,7 +41,7 @@ const page = () => {
 
     return (
         <>
-          <title>Shop</title>
+          <title>Shop - Masak</title>
 
           <section className='w-[1300px] max-w-[1300px] mx-auto pt-20'>
               <div className="relative flex gap-12">
