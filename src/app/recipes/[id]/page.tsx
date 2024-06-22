@@ -1,11 +1,16 @@
 "use client"
 
 import Profile from '@/components/AboutMe/Profile'
+import Sosmed from '@/components/Contact/Sosmed'
 import Popular from '@/components/Recipes/Popular'
 import Workshop from '@/components/Recipes/Workshop'
+import AddInfo from '@/components/Recipes/id/AddInfo'
 import Info from '@/components/Recipes/id/Info'
 import ListStep from '@/components/Recipes/id/ListStep'
+import MovePage from '@/components/Recipes/id/MovePage'
 import Rating from '@/components/Recipes/id/Rating'
+import RelatedPost from '@/components/Recipes/id/RelatedPost'
+import Tag from '@/components/Recipes/id/Tag'
 import SideShare from '@/components/Share/SideShare'
 import TitlePage from '@/components/Title/TitlePage'
 import TitleSub from '@/components/Title/TitleSub'
@@ -20,6 +25,7 @@ const page = ({ params }: { params: { id: number } }) => {
     const {data, error, isLoading} = useSWR('https://dummyjson.com/recipes/'+params.id, fetcher)
     if(error) return <div>failed to load</div>
     if(isLoading) return <div>loading...</div>
+
   return (
     <>
       <title>{`${data.name} - Masak`}</title>
@@ -59,7 +65,7 @@ const page = ({ params }: { params: { id: number } }) => {
 
               {/* Rating */}
               <div className="flex items-center gap-5">
-                  <TitleSub name='reviews'></TitleSub>
+                  <TitleSub name='reviews:'></TitleSub>
                   <Rating rating={data.rating} reviewCount={data.reviewCount}></Rating>
               </div>
             </div>
@@ -79,18 +85,27 @@ const page = ({ params }: { params: { id: number } }) => {
             </div>
 
             {/* Additional Information */}
-            <div className="bg-background flex">
-              <div className="w-[37%] px-[30px] py-[47px]
-                border-r border-solid border-[#dfdfdf]">
-                <h3 className='text-black text-2xl font-medium font-ebGaramond capitalize'>
-                  additional information
-                </h3>
+            <AddInfo></AddInfo>
+
+            <div className="flex flex-col gap-6">
+              {/* Tag */}
+              <div className="flex items-center gap-5">
+                  <TitleSub name='tags:'></TitleSub>
+                  <Tag data={data.tags}></Tag>
               </div>
-
-              <ul>
-
-              </ul>
+              
+              {/* Share */}
+              <div className="flex items-center gap-5">
+                  <TitleSub name='share:'></TitleSub>
+                  <Sosmed></Sosmed>
+              </div>
             </div>
+
+            {/* Prev Next */}
+            <MovePage currentPage={data.id}></MovePage>
+
+            {/* Related Post */}
+            <RelatedPost currentItem={data.id} cuisine={data.cuisine}></RelatedPost>
           </div>
 
           {/* Aside */}

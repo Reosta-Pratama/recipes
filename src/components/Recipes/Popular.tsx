@@ -3,7 +3,6 @@ import Link from 'next/link'
 import React from 'react'
 import useSWR from 'swr'
 import TitleSide from '../Title/TitleSide'
-import { FaStar } from 'react-icons/fa'
 import Rating from './id/Rating'
 
 const fetcher = (url : string) => fetch(url).then(res => res.json())
