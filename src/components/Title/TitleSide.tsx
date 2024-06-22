@@ -7,7 +7,7 @@ interface TitleSideProps{
 const TitleSide: React.FC<TitleSideProps> = ({name}) => {
   return (
     <div className='relative'>
-        <div className='bg-background relative w-fit z-10'>
+        <div className='bg-white relative w-fit z-10'>
             <h3 className='text-black text-2xl font-medium font-ebGaramond pr-4'>
                 {name}
             </h3>

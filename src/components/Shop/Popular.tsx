@@ -25,7 +25,7 @@ const Popular = () => {
                     <div
                         className='group relative block h-[130px]'>
                         <Link
-                            href={`shop/${item.id}`}
+                            href={`/shop/${item.id}`}
                             className='relative block h-full'>
                             <Image
                                 src={item.image}
@@ -39,7 +39,7 @@ const Popular = () => {
                     </div>
 
                     <div className="flex flex-col gap-2">
-                        <Link href={`shop/${item.id}`}>
+                        <Link href={`/shop/${item.id}`}>
                             <h2 className='text-black text-xl font-medium font-ebGaramond
                                 duration-300 ease-in-out
                                 hover:text-[#505050]'>{item.name}</h2>

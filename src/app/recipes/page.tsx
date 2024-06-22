@@ -52,11 +52,11 @@ const page = () => {
           <section className='w-[1300px] max-w-[1300px] mx-auto pt-20'>
               <div className="relative flex gap-12">
                   {/* Filtering & Popular */}
-                  <div className='sticky top-0 w-1/4 flex flex-col gap-16'>
+                  <aside className='sticky top-0 w-1/4 h-fit flex flex-col gap-16'>
                     <Filtering></Filtering>
                     <Popular></Popular>
                     <SideShare></SideShare>
-                  </div>
+                  </aside>
                   
 
                   {/* Sorting & Data Product */}

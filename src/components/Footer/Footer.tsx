@@ -5,7 +5,7 @@ import Sosmed from '../Contact/Sosmed';
 
 const Footer = () => {
   return (
-    <footer className={`bg-pattern bg-repeat-y bg-auto
+    <footer className={`bg-background bg-pattern bg-repeat-y bg-auto
         flex flex-col gap-[50px] pt-[126px] mt-24`}>
         <div className="w-full h-full flex justify-center">
             <div className="w-[40%] flex flex-col gap-6">

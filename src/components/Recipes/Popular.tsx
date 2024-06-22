@@ -4,6 +4,7 @@ import React from 'react'
 import useSWR from 'swr'
 import TitleSide from '../Title/TitleSide'
 import { FaStar } from 'react-icons/fa'
+import Rating from './id/Rating'
 
 const fetcher = (url : string) => fetch(url).then(res => res.json())
 
@@ -26,7 +27,7 @@ const Popular = () => {
                     <div
                         className='group relative block h-[130px]'>
                         <Link
-                            href={`shop/${item.id}`}
+                            href={`/recipes/${item.id}`}
                             className='relative block h-full'>
                             <Image
                                 src={item.image}
@@ -40,23 +41,13 @@ const Popular = () => {
                     </div>
 
                     <div className="flex flex-col gap-2">
-                        <Link href={`shop/${item.id}`}>
+                        <Link href={`/recipes/${item.id}`}>
                             <h2 className='text-black text-xl font-medium font-ebGaramond
                                 duration-300 ease-in-out
                                 hover:text-[#505050]'>{item.name}</h2>
                         </Link>
-                        <div className="flex items-center gap-2">
-                            <div className='flex items-center gap-1'>
-                                <span>
-                                    {item.rating}
-                                </span>
-                                <span className='text-main'>
-                                    <FaStar />
-                                </span>
-                            </div>
 
-                            <span>({item.reviewCount} view)</span>
-                        </div>
+                        <Rating rating={item.rating} reviewCount={item.reviewCount}></Rating>
                     </div>
                 </li>
             )

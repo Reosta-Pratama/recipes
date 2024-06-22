@@ -69,7 +69,7 @@ const Sorting: React.FC<SortingProps> = ({option, onchange}) => {
                 </span>
             </div>
 
-            <ul className={`bg-background absolute top-full left-0 
+            <ul className={`bg-white absolute top-full left-0 
                 w-full flex flex-col gap-[6px] px-5
                 duration-200 ease-in-out
                 ${isDropdownOpen ? "opacity-100 visible" : "opacity-0 invisible"}`}>
