@@ -20,7 +20,7 @@ import useSWR from 'swr'
 
 const fetcher = (url : string) => fetch(url).then(res => res.json())
 
-const page = ({ params }: { params: { id: number } }) => {
+const Page = ({ params }: { params: { id: number } }) => {
     // Get Data
     const {data, error, isLoading} = useSWR('https://dummyjson.com/recipes/'+params.id, fetcher)
     if(error) return <div>failed to load</div>
@@ -122,4 +122,4 @@ const page = ({ params }: { params: { id: number } }) => {
   )
 }
 
-export default page
+export default Page

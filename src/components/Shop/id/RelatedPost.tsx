@@ -13,6 +13,10 @@ interface RelatedPostProps {
 
 const fetcher = (url: string) => fetch(url).then(res => res.json())
 
+const shuffleArray = (array: any[]) => {
+    return array.sort(() => Math.random() - 0.5);
+}
+
 const RelatedPost: React.FC<RelatedPostProps> = ({ currentItem, cuisine }) => {
     // Get Data
     const { data, error, isLoading } = useSWR('https://dummyjson.com/recipes/', fetcher)
@@ -23,7 +27,7 @@ const RelatedPost: React.FC<RelatedPostProps> = ({ currentItem, cuisine }) => {
     const filteredPosts = data.recipes.filter((recipe: any) => 
         recipe.cuisine.toLowerCase() === cuisine.toLowerCase() && recipe.id !== currentItem
     )
-    const relatedPosts = useShuffleArray(filteredPosts).slice(0, 4)
+    const relatedPosts = shuffleArray(filteredPosts).slice(0, 4)
     
     // Check if relatedPosts is empty or null
     if (!relatedPosts || relatedPosts.length === 0) {

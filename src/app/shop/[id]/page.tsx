@@ -2,6 +2,7 @@
 
 import Sosmed from '@/components/Contact/Sosmed'
 import AddCart from '@/components/Shop/id/AddCart'
+import ImgBox from '@/components/Shop/id/ImgBox'
 import Info from '@/components/Shop/id/Info'
 import RelatedPost from '@/components/Shop/id/RelatedPost'
 import TitlePage from '@/components/Title/TitlePage'
@@ -10,7 +11,7 @@ import useSWR from 'swr'
 
 const fetcher = (url : string) => fetch(url).then(res => res.json())
 
-const page = ({ params }: { params: { id: number } }) => {
+const Page = ({ params }: { params: { id: number } }) => {
     // Get Data
     const {data, error, isLoading} = useSWR('https://dummyjson.com/recipes/'+params.id, fetcher)
     if(error) return <div>failed to load</div>
@@ -26,7 +27,7 @@ const page = ({ params }: { params: { id: number } }) => {
             {/* Head */}
             <div className="grid grid-cols-2 gap-10">
               {/* Image */}
-              <div className=""></div>
+              <ImgBox imgList={data.image}></ImgBox>
 
               {/* Info */}
               <div className="flex flex-col gap-9">
@@ -81,4 +82,4 @@ const page = ({ params }: { params: { id: number } }) => {
   )
 }
 
-export default page
+export default Page

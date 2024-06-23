@@ -11,7 +11,7 @@ import useSWR from 'swr'
 
 const fetcher = (url : string) => fetch(url).then(res => res.json())
 
-const page = () => {
+const Page = () => {
     const [currentPage, setCurrentPage] = useState(1)
     const itemsPerPage = 16
 
@@ -98,4 +98,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page
