@@ -26,6 +26,10 @@ const Info = () => {
                 })
             }
         </ul>
+
+        <div className="">
+            <p></p>
+        </div>
     </div>
   )
 }
