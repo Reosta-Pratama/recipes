@@ -35,7 +35,7 @@ const Filtering = () => {
     return (
         <div className='flex flex-col gap-16'>
             <div className='flex flex-col gap-5'>
-                <TitleSide name='Filter by Tags'></TitleSide>
+                <TitleSide name='Filter by Tags' fontSize='text-2xl'></TitleSide>
                 <ul className='grid grid-rows-10 grid-flow-col gap-1'>
                     {sortedTags.map((item: any, index: React.Key) => (
                         <li key={index}>

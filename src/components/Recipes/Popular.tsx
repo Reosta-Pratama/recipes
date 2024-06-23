@@ -17,7 +17,7 @@ const Popular = () => {
 
   return (
     <div className='flex flex-col gap-5'>
-        <TitleSide name='Popular Product'></TitleSide>
+        <TitleSide name='Popular Product'  fontSize='text-2xl'></TitleSide>
 
         <ul className='flex flex-col gap-5'>
         {

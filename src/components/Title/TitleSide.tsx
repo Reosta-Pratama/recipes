@@ -2,13 +2,14 @@ import React from 'react'
 
 interface TitleSideProps{
     name: string;
+    fontSize: string;
 }
 
-const TitleSide: React.FC<TitleSideProps> = ({name}) => {
+const TitleSide: React.FC<TitleSideProps> = ({name, fontSize}) => {
   return (
     <div className='relative'>
         <div className='bg-white relative w-fit z-10'>
-            <h3 className='text-black text-2xl font-medium font-ebGaramond pr-4'>
+            <h3 className={`text-black font-medium font-ebGaramond pr-4 ${fontSize}`}>
                 {name}
             </h3>
         </div>

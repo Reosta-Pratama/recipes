@@ -32,7 +32,7 @@ const RelatedPost: React.FC<RelatedPostProps> = ({ currentItem, cuisine }) => {
 
     return (
         <div className="flex flex-col gap-6 mt-8">
-            <TitleSide name='Try this also'></TitleSide>
+            <TitleSide name='Try this also' fontSize='text-2xl'></TitleSide>
 
             {/* List Shop */}
             <ul className="col-span-2 grid grid-cols-2 gap-[30px]">

@@ -30,7 +30,7 @@ const Searching = () => {
                 required
                 className='bg-transparent w-[240px] 
                     border-b border-solid border-[#5e5e5e]
-                    text-[#686868]' />
+                    text-[#686868] placeholder:text-[#686868]' />
 
             <BtnRound type='submit'>
                 <FiSearch />
