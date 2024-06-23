@@ -3,8 +3,8 @@
 import TitleSide from '@/components/Title/TitleSide'
 import React from 'react'
 import useSWR from 'swr';
-import Card from '../Card';
 import { useShuffleArray } from '@/helpers/Shuffle';
+import Card from '../Card';
 
 interface RelatedPostProps {
     currentItem: number;
@@ -23,7 +23,7 @@ const RelatedPost: React.FC<RelatedPostProps> = ({ currentItem, cuisine }) => {
     const filteredPosts = data.recipes.filter((recipe: any) => 
         recipe.cuisine.toLowerCase() === cuisine.toLowerCase() && recipe.id !== currentItem
     )
-    const relatedPosts = useShuffleArray(filteredPosts).slice(0, 2)
+    const relatedPosts = useShuffleArray(filteredPosts).slice(0, 4)
     
     // Check if relatedPosts is empty or null
     if (!relatedPosts || relatedPosts.length === 0) {
@@ -35,11 +35,11 @@ const RelatedPost: React.FC<RelatedPostProps> = ({ currentItem, cuisine }) => {
             <TitleSide name='Try this also' fontSize='text-4xl'></TitleSide>
 
             {/* List Shop */}
-            <ul className="col-span-2 grid grid-cols-2 gap-[30px]">
+            <ul className="col-span-2 grid grid-cols-4 gap-[30px]">
                 {
                     relatedPosts.map((item: any) => (
                         <li key={item.id}>
-                            <Card data={item}></Card>
+                            <Card data={item} imgSize='h-[340px]'></Card>
                         </li>
                     ))
                 }
