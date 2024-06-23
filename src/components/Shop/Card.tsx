@@ -12,7 +12,7 @@ const Card: React.FC<CardProps> = ({data}) => {
             <div
                 className='group relative block h-[220px]'>
                 <Link
-                    href={`shop/${data.id}`}
+                    href={`/shop/${data.id}`}
                     className='relative block h-full'>
                     <Image
                         src={data.image}
@@ -39,7 +39,7 @@ const Card: React.FC<CardProps> = ({data}) => {
             </div>
 
             <div className="flex flex-col text-center gap-2">
-                <Link href={`shop/${data.id}`}>
+                <Link href={`/shop/${data.id}`}>
                     <h2 className='text-black text-xl font-medium font-ebGaramond
                         duration-300 ease-in-out
                         hover:text-[#505050]'>{data.name}</h2>

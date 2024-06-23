@@ -9,7 +9,7 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({data}) => {
   return (
         <Link
-            href={`recipes/${data.id}`}
+            href={`/recipes/${data.id}`}
             className='relative block h-[470px]'>
                 <Image
                     src={data.image}

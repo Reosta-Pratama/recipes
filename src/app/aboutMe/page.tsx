@@ -15,7 +15,9 @@ const page = () => {
     <section className='w-[1300px] max-w-[1300px] mx-auto pt-20'>
       <div className="relative flex gap-12">
         {/* About Me */}
-        <div className="flex flex-col flex-1 gap-12"></div>
+        <div className="flex flex-col flex-1 gap-12">
+          about me
+        </div>
 
         {/* Aside */}
         <aside className="sticky top-10 w-1/3 h-fit 
