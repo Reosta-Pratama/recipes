@@ -23,8 +23,19 @@ const Header = () => {
                     ]}>
             </Navigation>
 
-            {/* Searching */}
-            <Searching></Searching>
+            {/* Searching & Cart */}
+            <div className="flex items-center gap-10">
+                <Searching></Searching>
+
+                <Link
+                    href={'/cart'}
+                    className='flex items-center gap-1
+                        text-xs font-semibold tracking-[1px] uppercase
+                        duration-200 ease-in-out hover:text-black'>
+                    <span>Cart</span>
+                    <span>(0)</span>
+                </Link>
+            </div>
         </header>
     )
 }

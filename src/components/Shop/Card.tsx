@@ -4,13 +4,14 @@ import React from 'react'
 
 interface CardProps{
     data: any;
+    imgSize: string;
 }
 
-const Card: React.FC<CardProps> = ({data}) => {
+const Card: React.FC<CardProps> = ({data, imgSize}) => {
   return (
         <div className='flex flex-col gap-4'>
             <div
-                className='group relative block h-[220px]'>
+                className={`group relative block ${imgSize}`}>
                 <Link
                     href={`/shop/${data.id}`}
                     className='relative block h-full'>

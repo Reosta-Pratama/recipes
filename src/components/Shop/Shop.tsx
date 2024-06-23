@@ -31,7 +31,7 @@ const Recipes = () => {
                     data?.recipes?.map((item: any) => {
                         return(
                             <li key={item.id}>
-                                <Card data={item}></Card>
+                                <Card data={item} imgSize='h-[220px]'></Card>
                             </li>
                         )
                     })
