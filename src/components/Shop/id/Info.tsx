@@ -1,11 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Description from './AdditionalInfo/Description'
+import AddInfo from './AdditionalInfo/AddInfo'
+import Reviews from './AdditionalInfo/Reviews'
 
-const Info = () => {
+interface InfoProps{
+    title: string;
+}
+
+const Info: React.FC<InfoProps> = ({title}) => {
     const tabList = [
         {id: "desc", label: "description"},
         {id: "addInfo", label: "additional information"},
         {id: "reviews", label: "reviews"}
     ]
+    
+    const [tabInfo, setTabInfo] = useState("desc") 
 
   return (
     <div className='flex flex-col gap-8'>
@@ -16,9 +25,10 @@ const Info = () => {
                     return(
                         <li
                             key={_item.id}
-                            className={`text-black text-xl 
+                            onClick={() => setTabInfo(_item.id)}
+                            className={`${tabInfo === _item.id ? "text-main" : "text-black"} text-xl 
                                 font-medium font-ebGaramond capitalize
-                                cursor-pointer
+                                cursor-pointer select-none
                                 duration-300 ease-in-out hover:text-main`}>
                             {_item.label}
                         </li>
@@ -27,8 +37,25 @@ const Info = () => {
             }
         </ul>
 
-        <div className="">
-            <p></p>
+        <div>
+            {/* Description */}
+            {
+                tabInfo === "desc" &&
+                <Description></Description>
+            }
+            
+            
+            {/* Additional Information */}
+            {
+                tabInfo === "addInfo" &&
+                <AddInfo></AddInfo>
+            }
+
+            {/* Reviews */}
+            {
+                tabInfo === "reviews" &&
+                <Reviews title={title}></Reviews>
+            }
         </div>
     </div>
   )

@@ -72,7 +72,7 @@ const Page = ({ params }: { params: { id: number } }) => {
             </div>
 
             {/* Additional Info */}
-            <Info></Info>
+            <Info title={data.name}></Info>
 
             {/* Related Post */}
             <RelatedPost currentItem={data.id} cuisine={data.cuisine}></RelatedPost>

@@ -1,3 +1,4 @@
+import BtnOrange from '@/components/Button/BtnOrange';
 import React, { ReactNode } from 'react'
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi'
 
@@ -50,14 +51,10 @@ const AddCart = () => {
                 </div>
             </div>
 
-            <button 
-                type="submit"
-                className='bg-main w-[200px] h-[50px] 
-                    duration-300 ease-in-out hover:bg-[#d3452e]'>
-                    <span className='text-white text-xs font-semibold tracking-[2px] uppercase'>
-                        add to cart
-                    </span>
-            </button>
+            <BtnOrange
+                name='add to cart'
+                type='submit'>
+            </BtnOrange>
         </div>
     </form>
   )

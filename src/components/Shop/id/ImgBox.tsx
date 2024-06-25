@@ -14,9 +14,8 @@ const ImgBox: React.FC<ImgBoxProps> = ({imgList}) => {
                     src={imgList} 
                     alt={`1 ${imgList}`}
                     priority
-                    layout={"fill"} 
-                    objectFit={"cover"}
-                    objectPosition={"top"}
+                    fill
+                    className="object-cover object-left-top"
                 />
             </div>
 
@@ -25,9 +24,8 @@ const ImgBox: React.FC<ImgBoxProps> = ({imgList}) => {
                     src={imgList} 
                     alt={`2 ${imgList}`}
                     priority
-                    layout={"fill"} 
-                    objectFit={"cover"}
-                    objectPosition={"right"}
+                    fill
+                    className="object-cover object-right"
                 />
             </div>
 
@@ -36,9 +34,8 @@ const ImgBox: React.FC<ImgBoxProps> = ({imgList}) => {
                     src={imgList} 
                     alt={`3 ${imgList}`}
                     priority
-                    layout={"fill"} 
-                    objectFit={"cover"}
-                    objectPosition={"bottom"}
+                    fill
+                    className="object-cover object-left-bottom"
                 />
             </div>
         </div>
@@ -49,9 +46,8 @@ const ImgBox: React.FC<ImgBoxProps> = ({imgList}) => {
                     src={imgList} 
                     alt={`4 ${imgList}`}
                     priority
-                    layout={"fill"} 
-                    objectFit={"cover"}
-                    objectPosition={"center"}
+                    fill
+                    className="object-cover object-center"
                 />
             </div>
         </div>
