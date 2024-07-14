@@ -1,3 +1,4 @@
+import { formatNumberWithDots } from '@/helpers/FormatNumber';
 import Image from 'next/legacy/image';
 import Link from 'next/link';
 import React from 'react'
@@ -45,7 +46,9 @@ const Card: React.FC<CardProps> = ({data, imgSize}) => {
                         duration-300 ease-in-out
                         hover:text-[#505050]'>{data.name}</h2>
                 </Link>
-                <span>Rp10.000</span>
+                <span>
+                    Rp.{formatNumberWithDots(data.id * 1000)}
+                </span>
             </div>
         </div>
   )
